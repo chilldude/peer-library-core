@@ -1,0 +1,27 @@
+extends layout
+
+block header
+  .container_12.wrap
+    .grid_12
+      .logo
+        a(href='#')
+          img(src='img/logo.png')
+      .menu
+        ul.nav
+          li
+            a(href='#').search-link
+              i.icon-search.icon-large
+          li
+            a(href='#') Register
+          li
+            a(href='#').last Sign in
+
+block search
+  .container_12.wrap
+    .grid_12
+      .logo
+        a(href='#')
+          img(src='img/logo.png')
+    .grid_12.search-bar
+      i.search-icon.icon-search.icon-3x
+      input(type='text', placeholder='Search 1,234,567 scholarly articles').search-input

@@ -1,5 +1,31 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype 5
+html
+  head
+    title= title
+    include includes/styles
+    include includes/scripts
+  body#home
+    header
+      .container_12.wrap
+        .grid_12
+          .logo
+            a(href='#')
+              img(src='img/logo.png')
+          .menu
+            ul.nav
+              li
+                a(href='#') Register
+              li
+                a(href='#').last Sign in
+    section
+      .container_12.wrap
+        .grid_12.search-bar
+          i.search-icon.icon-search.icon-3x
+          input(type='text', placeholder='Search 1,234,567 scholarly articles').search-input
+    .search
+      .container_12.wrap
+        .grid_12
+          .logo
+            a(href='#')
+              img(src='img/logo.png')
+  
