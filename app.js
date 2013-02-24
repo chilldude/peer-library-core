@@ -32,6 +32,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/profile', user.profile);
 app.get('/search', pub.results);
 app.get('/users', user.list);
 
