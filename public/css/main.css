@@ -585,10 +585,14 @@ ol.comment-list .comment-content p {
 
 .search-input::-moz-placeholder {
     font-size: 36px;
+    margin-top: 12px;
+    padding-bottom: 5px;
 }
 
 .search-input:-moz-placeholder {
     font-size: 36px;
+    margin-top: 12px;
+    padding-bottom: 5px;
 }
 
 .search-input::-ms-input-placeholder {
