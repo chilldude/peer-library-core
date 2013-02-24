@@ -593,9 +593,17 @@ ul.field-list li ul.subject-list {
 	border-left: 1px solid #dee7e9;
 }
 
-.search-tools h2 {
+.search-tools h3 {
 	font-weight: 300;
 	margin-top: 0;
+}
+
+.search-tools label {
+	display: block;
+}
+
+.search-tools input {
+	display: block;
 }
 
 /* sidebar > details */

@@ -67,6 +67,14 @@ $(document).ready(function(){
 		}
 	});
 	
+	// *enter to submit form
+	$("input").keypress(function(event) {
+	    if (event.which == 13) {
+	        event.preventDefault();
+	        $("form").submit();
+	    }
+	});
+	
 	//TODO: abstract preview
 	$('.preview-link').click(function(){
 		$('.abstract').slideToggle();
