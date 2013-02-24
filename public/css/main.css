@@ -27,7 +27,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #dee7e9;
     margin: 1em 0;
     padding: 0;
 }
@@ -48,7 +48,7 @@ textarea {
 
 .chromeframe {
     margin: 0.2em 0;
-    background: #ccc;
+    background: #dee7e9;
     color: #000;
     padding: 0.2em 0;
 }
@@ -362,7 +362,7 @@ ol.item-list .item-content h4 a, .article-summary-data h4 a {
 
 ol.item-list span.stats, span.article-summary-stats {
     float: right;
-    color: #666;
+    color: #6f7477;
     font-weight: 300;
 }
 
@@ -456,7 +456,7 @@ ol.comment-list .comment-info {
 }
 
 ol.comment-list .comment-info i {
-    color: #666;
+    color: #6f7477;
     position: relative;
     top: 5px;
     padding-right: 5px;
@@ -468,7 +468,7 @@ ol.comment-list .comment-info a:hover i {
 }
 
 ol.comment-list .comment-info .comment-date {
-    color: #999;
+    color: #6f7477;
     padding-left: 15px;
 }
 
@@ -478,7 +478,7 @@ ol.comment-list .comment-content {
 }
 
 ol.comment-list .with-response {
-    border-left: 1px solid #e3e3e3;
+    border-left: 1px solid #dee7e9;
 }
 
 ol.comment-list .comment-content p {
@@ -492,38 +492,15 @@ ol.comment-list .comment-content p {
 }
 
 .user-info .score {
-    color: #999;
+    color: #6f7477;
     padding: 0 3px;
     margin-right: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #dee7e9;
 }
 
 .user-info .title {
     margin: 0;
     line-height: 1.5em;
-}
-
-ol.activity-list {
-    padding: 0;
-}
-
-ol.activity-list li {
-    list-style-type: none;
-}
-
-ol.activity-list li a {
-    color: #666;
-    padding: 10px;
-    display: block;
-}
-
-ol.activity-list li a:hover {
-    text-decoration: none;
-    background-color: #fcfcfc;
-}
-
-ol.activity-list .article {
-    color: #999;
 }
 
 /* search */
@@ -628,9 +605,62 @@ ul.field-list li ul.subject-list {
     display: none;
 }
 
-/* details-sidebar */
+/* sidebar > search tools */
+.search-tools {
+	margin-top: 20px;
+	padding: 10px;
+	border-left: 1px solid #dee7e9;
+}
+
+.search-tools h2 {
+	font-weight: 300;
+	margin-top: 0;
+}
+
+/* sidebar > details */
 .details-sidebar {
-   padding: 20px 0; 
+	padding: 20px 0; 
+}
+
+/* sidebar > activity */
+.activity-sidebar {
+    margin-top: 20px;
+    padding: 10px;
+    border-left: 1px solid #dee7e9;
+}
+
+.activity-sidebar h3 {
+    font-weight: 300;
+    margin-top: 0;
+}
+
+ol.activity-list {
+    padding: 0;
+}
+
+ol.activity-list li {
+    list-style-type: none;
+}
+
+ol.activity-list li a {
+    color: #6f7477;
+    padding: 10px;
+    display: block;
+
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+}
+
+ol.activity-list li a:hover {
+    text-decoration: none;
+    background-color: #eff5f7;
+}
+
+ol.activity-list .article {
+    font-weight: 300;
 }
 
 
@@ -802,7 +832,7 @@ footer .oa_logo img {
 
     pre,
     blockquote {
-        border: 1px solid #999;
+        border: 1px solid #dee7e9;
         page-break-inside: avoid;
     }
 
