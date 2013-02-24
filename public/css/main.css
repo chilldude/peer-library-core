@@ -78,11 +78,11 @@ h4 {
     margin: 0;
 }
 
-::-webkit-input-placeholder { font-family: 'Source Sans Pro', sans-serif; }
-::-moz-placeholder { font-family: 'Source Sans Pro', sans-serif; } /* firefox 19+ */
-:-ms-input-placeholder { font-family: 'Source Sans Pro', sans-serif; } /* ie */
-input:-moz-placeholder { font-family: 'Source Sans Pro', sans-serif; }
-input { font-family: 'Source Sans Pro', sans-serif; }
+::-webkit-input-placeholder { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; }
+::-moz-placeholder { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; } /* firefox 19+ */
+:-ms-input-placeholder { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; } /* ie */
+input:-moz-placeholder { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; }
+input { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; }
 
 /* =============================
         ghp
@@ -547,26 +547,19 @@ ol.comment-list .comment-content p {
     width: 630px;
 }
 
+.search-input::-webkit-input-placeholder,
+.search-input:-moz-placeholder,
+.search-input::-moz-placeholder,
+.search-input:-ms-input-placeholder {
+    font-size: 36px;
+    position: relative;
+    top: 10px;
+}
+
 .search-input:focus {
     outline: none;
 }
 
-.search-input::-webkit-input-placeholder {
-    font-size: 36px;
-    position: relative;
-    top: 10px;
-}
-.search-input::-moz-placeholder {
-    font-size: 36px;
-    position: relative;
-    top: 10px;
-}
-
-.search-input::-ms-input-placeholder {
-    font-size: 36px;
-    position: relative;
-    top: 10px;
-}
 
 .search-icon {
     color: #87939c;
