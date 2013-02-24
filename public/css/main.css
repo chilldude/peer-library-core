@@ -547,19 +547,26 @@ ol.comment-list .comment-content p {
     width: 630px;
 }
 
-.search-input::-webkit-input-placeholder,
-.search-input:-moz-placeholder,
-.search-input::-moz-placeholder,
-.search-input:-ms-input-placeholder {
+.search-input:focus {
+    outline: none;
+}
+
+.search-input::-webkit-input-placeholder {
+    font-size: 36px;
+    position: relative;
+    top: 10px;
+}
+.search-input::-moz-placeholder {
     font-size: 36px;
     position: relative;
     top: 10px;
 }
 
-.search-input:focus {
-    outline: none;
+.search-input::-ms-input-placeholder {
+    font-size: 36px;
+    position: relative;
+    top: 10px;
 }
-
 
 .search-icon {
     color: #87939c;
