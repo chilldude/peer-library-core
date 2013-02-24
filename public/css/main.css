@@ -599,16 +599,21 @@ ol.comment-list .comment-content p {
     position: relative;
     top: 10px;
 }
+
 .search-input::-moz-placeholder {
     font-size: 36px;
-    position: relative;
-    top: 10px;
+    margin-top: 12px;
+    padding-bottom: 5px;
+}
+
+.search-input:-moz-placeholder {
+    font-size: 36px;
+    margin-top: 12px;
+    padding-bottom: 5px;
 }
 
 .search-input::-ms-input-placeholder {
     font-size: 36px;
-    position: relative;
-    top: 10px;
 }
 
 .search-icon {
