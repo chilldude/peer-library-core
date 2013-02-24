@@ -66,4 +66,9 @@ $(document).ready(function(){
 			viewerOff();
 		}
 	});
+	
+	//TODO: abstract preview
+	$('.preview-link').click(function(){
+		$('.abstract').slideToggle();
+	});
 });

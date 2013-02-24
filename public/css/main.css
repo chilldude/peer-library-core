@@ -586,9 +586,21 @@ ul.field-list li ul.subject-list {
 	display: none;
 }
 
-/* details-sidebar */
+/* sidebar > search tools */
+.search-tools {
+	margin-top: 20px;
+	padding: 10px;
+	border-left: 1px solid #dee7e9;
+}
+
+.search-tools h2 {
+	font-weight: 300;
+	margin-top: 0;
+}
+
+/* sidebar > details */
 .details-sidebar {
-   padding: 20px 0; 
+	padding: 20px 0; 
 }
 
 
