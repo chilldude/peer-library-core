@@ -585,20 +585,14 @@ ol.comment-list .comment-content p {
 
 .search-input::-moz-placeholder {
     font-size: 36px;
-    position: relative;
-    top: 10px;
 }
 
 .search-input:-moz-placeholder {
     font-size: 36px;
-    position: relative;
-    top: 10px;
 }
 
 .search-input::-ms-input-placeholder {
     font-size: 36px;
-    position: relative;
-    top: 10px;
 }
 
 .search-icon {
