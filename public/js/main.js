@@ -32,7 +32,7 @@ $(document).ready(function(){
 	$(document).keydown(function(event) {
 		if (!searchActive) {
 			var char = String.fromCharCode(event.which);
-			if (char.match(/\w/) && !event.ctrlKey) {
+			if (char.match(/\w/) && !event.ctrlKey && !$('input').is(':focus')) {
 				searchOn();
 			}
 		}

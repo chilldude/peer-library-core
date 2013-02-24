@@ -84,6 +84,32 @@ h4 {
 input:-moz-placeholder { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; }
 input { font-family: 'Source Sans Pro', sans-serif; }
 
+/* ===========================
+		ui-styles
+	=============================== */
+.ui-slider {
+	position: relative;
+	text-align: left;
+	width: 100%;
+	dispaly: block;
+}
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1.2em;
+	height: 1.2em;
+	cursor: default;
+	background: black;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+}
+
 /* =============================
         ghp
     =============================*/
