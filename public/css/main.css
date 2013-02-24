@@ -82,7 +82,7 @@ h4 {
 ::-moz-placeholder { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; } /* firefox 19+ */
 :-ms-input-placeholder { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; } /* ie */
 input:-moz-placeholder { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; }
-input { font-family: 'Source Sans Pro', sans-serif; color: #6f7477; }
+input { font-family: 'Source Sans Pro', sans-serif; }
 
 /* =============================
         ghp
