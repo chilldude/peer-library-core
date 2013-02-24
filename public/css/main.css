@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
+@import url('chosen.css');
 
 html,
 button,
@@ -87,26 +88,42 @@ input { font-family: 'Source Sans Pro', sans-serif; }
 /* ===========================
 		ui-styles
 	=============================== */
+input:focus {
+	outline: none;
+}	
+
 .ui-slider {
 	position: relative;
 	text-align: left;
 	width: 100%;
 	dispaly: block;
+	border-top: 1px solid #b8c1c7;
+	height: 0!important;
 }
 .ui-slider .ui-slider-handle {
+	top: -9px!important;
 	position: absolute;
 	z-index: 2;
-	width: 1.2em;
-	height: 1.2em;
-	cursor: default;
-	background: black;
+	width: 10px!important;
+	height: 15px!important;
+	background: white;
+	border: 1px solid #667d8d;
 }
+
+.ui-slider .ui-slider-handle:active {
+	background: #eff5f7;
+}
+
+.ui-slider a {
+	outline: none!important;
+}
+
 .ui-slider .ui-slider-range {
 	position: absolute;
 	z-index: 1;
 	font-size: .7em;
 	display: block;
-	border: 0;
+	border: 1px solid red;
 	background-position: 0 0;
 }
 
@@ -643,12 +660,39 @@ ul.field-list li ul.subject-list {
 	margin-top: 0;
 }
 
+.search-tools span.filter {
+	margin-bottom: 20px;
+	display: block;
+}
+
 .search-tools label {
 	display: block;
+	margin-bottom: 10px;
+	font-size: 0.9em;
+	font-weight: 300;
+}
+
+.search-tools select {
+	width: 241px;
 }
 
 .search-tools input {
 	display: block;
+	width: 236px;
+}
+
+.search-tools label#score, .search-tools label#pub-date {
+	display: inline-block;
+}
+
+.search-tools input#score, .search-tools input#pub-date {
+	border: 0;
+}
+
+.search-tools #score-range, .search-tools #date-range {
+	display: block;
+	margin: 20px 10px;
+	width: 230px;
 }
 
 /* sidebar > details */

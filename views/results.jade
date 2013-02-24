@@ -111,33 +111,69 @@ block content
 				h3 Refine Search
 				form(action='/search')
 					label(for='topics') Topics
-					input(type='text', id='topics')
-					label(for='title') Title contains
-					input(type='text', id='title')
-					label(for='abstract') Abstract contains
-					input(type='text', id='abstract')
-					label(for='author') Author name
-					input(type='text', id='author')
-					label(for='journal') Journal
-					input(type='text', id='journal')
-					label(for='score') PeerLibrary score
-					input(type='text', id='score')
-					#score-range
-					label(for='pub_date') Publication date
-					input(type='text', id='pub-date')
+					span.filter
+						select.chzn(type='text', id='topics', data-placeholder='Select topic(s)', multiple)
+							option(value='')
+							option Computer Science
+							option Biology
+							option Physics
+							option Chemistry
+							option Philosophy
+							option Mathematics
+							option Political Science
+							option Big Data
+							option html5 nanotechnology
+							option bitcoin casino
+							option robot circus
+					span.filter
+						label(for='title') Title contains
+						input(type='text', id='title')
+					span.filter
+						label(for='abstract') Abstract contains
+						input(type='text', id='abstract')
+					span.filter
+						label(for='author') Author name
+						input(type='text', id='author')
+					span.filter
+						label(for='journal') Journal
+						input(type='text', id='journal')
+					span.filter
+						label(for='score') PeerLibrary score
+						input(type='text', id='score', disabled)
+						#score-range
+					span.filter
+						label(for='pub_date') Publication year
+						input(type='text', id='pub-date', disabled)
+						#date-range
 
 block misc
 	script(type='text/javascript')
-		$(function() {
-				$( "#score-range" ).slider({
-					range: true,
-					min: 0,
-					max: 100,
-					values: [ 0, 100 ],
-					slide: function( event, ui ) {
-						$( "#score" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-					}
-				});
-				$( "#score" ).val( $( "#score-range" ).slider( "values", 0 ) +
-					" - " + $( "#score-range" ).slider( "values", 1 ) );
+		$(document).ready(function() {
+			$(".chzn").chosen();
+
+			$('#score-range').slider({
+				range: true,
+				min: 0,
+				max: 100,
+				values: [ 0, 100 ],
+				step: 10,
+				slide: function( event, ui ) {
+					$( "#score" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+				}
 			});
+			$( "#score" ).val( $( "#score-range" ).slider( "values", 0 ) +
+				" - " + $( "#score-range" ).slider( "values", 1 ) );
+
+			$('#date-range').slider({
+				range: true,
+				min: 0,
+				max: 100,
+				values: [ 0, 100 ],
+				step: 10,
+				slide: function( event, ui ) {
+					$( "#pub-date" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+				}
+			});
+			$( "#pub-date" ).val( $( "#date-range" ).slider( "values", 0 ) +
+				" - " + $( "#date-range" ).slider( "values", 1 ) );
+		});
