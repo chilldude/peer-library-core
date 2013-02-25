@@ -110,8 +110,8 @@ block content
 			.search-tools
 				h3 Refine Search
 				form(action='/search')
-					label(for='topics') Topics
 					span.filter
+						label(for='topics') Topics
 						select.chzn(type='text', id='topics', data-placeholder='Select topic(s)', multiple)
 							option(value='')
 							option Computer Science
@@ -126,6 +126,17 @@ block content
 							option bitcoin casino
 							option robot circus
 					span.filter
+						label(for='journal') Published in
+						select.chzn(type='text', id='journal', data-placeholder='Select journal(s)', multiple)
+							option PLOS Biology
+							option Theory of Computing
+							option Science and Technology of Advanced Materials
+							option Computational Linguistics
+							option BMJ
+							option Anamesa
+							option Culture Machine
+							option European Political Economy Review
+					span.filter
 						label(for='title') Title contains
 						input(type='text', id='title')
 					span.filter
@@ -135,13 +146,10 @@ block content
 						label(for='author') Author name
 						input(type='text', id='author')
 					span.filter
-						label(for='journal') Journal
-						input(type='text', id='journal')
-					span.filter
-						label(for='score') PeerLibrary score
+						label(for='score') Peer Library score
 						input(type='text', id='score', disabled)
 						#score-range
-					span.filter
+					span.filter	
 						label(for='pub_date') Publication year
 						input(type='text', id='pub-date', disabled)
 						#date-range

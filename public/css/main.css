@@ -658,6 +658,7 @@ ul.field-list li ul.subject-list {
 	margin-top: 20px;
 	padding: 10px;
 	border-left: 1px solid #dee7e9;
+	padding-bottom: 30px;
 }
 
 .search-tools h3 {
@@ -683,7 +684,14 @@ ul.field-list li ul.subject-list {
 
 .search-tools input {
 	display: block;
-	width: 236px;
+	width: 227px;
+	padding: 5px;
+	font-size: 13px;
+	border: 1px solid #aaa;
+}
+
+.search-tools input:focus {
+	border: 1px solid #a1b3c2;
 }
 
 .search-tools label#score, .search-tools label#pub-date {
