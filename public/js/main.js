@@ -84,10 +84,15 @@ $(document).ready(function(){
 	$('.publications-link').click(function(){
 		$('.review-list').hide();
 		$('.item-list').fadeIn(250);
+		$('.publications-link').addClass('active');
+		$('.reviews-link').removeClass('active');
+
 	});
 
 	$('.reviews-link').click(function(){
 		$('.item-list').hide();
 		$('.review-list').fadeIn(250);
+		$('.publications-link').removeClass('active');
+		$('.reviews-link').addClass('active');
 	});
 });
