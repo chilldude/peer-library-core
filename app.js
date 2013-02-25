@@ -6,11 +6,12 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
-  , pub = require('./routes/pub')
+  , article = require('./routes/article')
+  , auth = require('./routes/auth')
   , http = require('http')
   , path = require('path')
-	, passport = require('passport')
-	, LocalStrategy = require('passport-local').Strategy;
+  , passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy;
 
 var app = express();
 
@@ -35,9 +36,9 @@ app.configure('development', function(){
 
 //configure routes
 app.get('/', routes.index);
-app.get('/login', routes.login);
+app.get('/login', auth.login);
 app.get('/profile', user.profile);
-app.get('/search', pub.results);
+app.get('/search', article.results);
 app.get('/users', user.list);
 
 //authentication
