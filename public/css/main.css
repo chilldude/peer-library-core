@@ -391,7 +391,6 @@ ol.item-list li:hover {
 }
 
 ol.item-list .item-content, .article-summary-data {
-    width: 85%;
     float: left;
 }
 
@@ -407,6 +406,8 @@ ol.item-list span.stats, span.article-summary-stats {
     float: right;
     color: #6f7477;
     font-weight: 300;
+    text-align: right;
+    width: 150px;
 }
 
 ol.item-list span.stats span, span.article-summary-stats span {
@@ -417,7 +418,7 @@ ol.item-list .item-content h4.title, .article-summary-data h4.title {
     margin-bottom: 10px;
 }
 
-ol.item-list .abstract, .article-summary .abstract {
+ol.item-list .abstract, .article-summary .abstract, .review-list .abstract {
     display: none;
     padding: 20px;
 }
@@ -437,6 +438,7 @@ ol.item-list .abstract, .article-summary .abstract {
 
 .review-list li .author {
     float: left;
+    width: 570px;
 }
 
 .review-list li .author h3.name {
@@ -469,6 +471,11 @@ ol.item-list .abstract, .article-summary .abstract {
 
 .review-list li .text {
     clear: both;
+}
+
+.review-list li .text h3 {
+    padding-top: 20px;
+    margin: 0;
 }
 
 .review-list li .text p {
