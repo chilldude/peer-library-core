@@ -38,6 +38,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/login', auth.login);
 app.get('/profile', user.profile);
+app.get('/article', article.details);
 app.get('/search', article.results);
 app.get('/users', user.list);
 

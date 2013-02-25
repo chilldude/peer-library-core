@@ -82,17 +82,30 @@ $(document).ready(function(){
 
 	//profile publications/reviews tab
 	$('.publications-link').click(function(){
-		$('.review-list').hide();
 		$('.item-list').fadeIn(250);
+		$('.review-list').hide();
+		$('.full-text').hide();
 		$('.publications-link').addClass('active');
 		$('.reviews-link').removeClass('active');
+		$('.full-text-link').removeClass('active');
 
 	});
 
 	$('.reviews-link').click(function(){
 		$('.item-list').hide();
 		$('.review-list').fadeIn(250);
+		$('.full-text').hide();
 		$('.publications-link').removeClass('active');
 		$('.reviews-link').addClass('active');
+		$('.full-text-link').removeClass('active');
+	});
+
+	$('.full-text-link').click(function(){
+		$('.item-list').hide();
+		$('.review-list').hide();
+		$('.full-text').fadeIn(250);
+		$('.publications-link').removeClass('active');
+		$('.reviews-link').removeClass('active');
+		$('.full-text-link').addClass('active');
 	});
 });
