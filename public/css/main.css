@@ -430,53 +430,49 @@ ol.item-list .abstract, .article-summary .abstract {
 
 .review-list li {
     list-style-type:none;
-    padding: 20px 0;
-}
-
-.review-item {
+    padding: 20px;
     border: 1px solid #dee7e9;
-    padding: 20px 20px;
 }
 
-.review-author {
+.review-list .author {
     float: left;
     width: 70%;
 }
 
-.review-author h3.name {
+.review-list li h3.name {
     margin: 0 0 5px 0;
 }
 
-.review-verdict {
+.review-list li .verdict {
     float: right;
+    background-color: #000;
 }
 
-.review-verdict i {
+.review-list li .verdict i {
     padding-left: 5px;
 }
 
-.review-verdict i.plus-plus {
+.review-list li i.plus-plus {
     color: #00d679;
 }
 
-.review-verdict i.plus {
+.review-list li i.plus {
     color: #bcffe2;
 }
 
-.review-verdict i.minus {
+.review-list li i.minus {
     color: #f4c9de;
 }
 
-.review-verdict i.minus-minus {
+.review-list li i.minus-minus {
     color: #e02581;
 }
 
-
-.review-text {
+.review-list li .text {
     clear: both;
 }
 
-.review-text p {
+.review-list li .text p {
     line-height: 2em;
     padding: 20px 0 0 0;
     margin: 0;
