@@ -10,6 +10,7 @@
     "jade": "*",
     "stylus": "*",
     "redis": "*",
-    "passport-local": "*"
+    "passport-local": "*",
+    "passport": "*"
   }
 }

@@ -8,7 +8,9 @@ var express = require('express')
   , user = require('./routes/user')
   , pub = require('./routes/pub')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+	, passport = require('passport')
+	, LocalStrategy = require('passport-local').Strategy;
 
 var app = express();
 
@@ -31,10 +33,15 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+//configure routes
 app.get('/', routes.index);
+app.get('/login', routes.login);
 app.get('/profile', user.profile);
 app.get('/search', pub.results);
 app.get('/users', user.list);
+
+//authentication
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
