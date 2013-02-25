@@ -696,12 +696,19 @@ ul.field-list li ul.subject-list {
 	border: 1px solid #a1b3c2;
 }
 
-.search-tools label#score, .search-tools label#pub-date {
+.search-tools .label-slider {
 	display: inline-block;
+	float: left;
+	width: 120px;
 }
 
 .search-tools input#score, .search-tools input#pub-date {
 	border: 0;
+	float: right;
+	width: 100px;
+	display: block;
+	padding-top: 1px;
+	text-align: right;
 }
 
 .search-tools #score-range, .search-tools #date-range {
