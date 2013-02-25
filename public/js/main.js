@@ -79,4 +79,15 @@ $(document).ready(function(){
 	$('.preview-link').click(function(){
 		$('.abstract').slideToggle();
 	});
+
+	//profile publications/reviews tab
+	$('.publications-link').click(function(){
+		$('.review-list').hide();
+		$('.item-list').fadeIn(250);
+	});
+
+	$('.reviews-link').click(function(){
+		$('.item-list').hide();
+		$('.review-list').fadeIn(250);
+	});
 });
