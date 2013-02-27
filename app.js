@@ -56,6 +56,7 @@ app.get('/', routes.index);
 app.get('/login', auth.login);
 app.get('/register', auth.register);
 app.get('/profile', user.profile);
+app.get('/article', article.details);
 app.get('/search', article.results);
 app.get('/users', user.list);
 
