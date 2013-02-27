@@ -1,0 +1,17 @@
+extends layout-auth
+
+block content
+	.form-container
+		h2 Welcome back!
+		form(method='POST', action='/login')
+			p
+				span
+					label(for='email') Email
+					input(type='text', value='', name='email', id='email', placeholder='Email address')
+			p
+				span
+					label(for='password') Password
+					input(type='password', value='', name='password', id='password', placeholder='Password')
+			p
+				span
+					input(type='submit', value='Sign in')

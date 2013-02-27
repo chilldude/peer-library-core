@@ -1,0 +1,58 @@
+extends layout-auth
+
+block content
+	.form-container
+		h2 Create your Peer Library account.
+		form(action='/')
+			p
+				span
+					label(for='email') Email
+					input(type='text', value='', name='email', id='email', placeholder='Email address')
+			p
+				span.institution
+			p
+				span
+					label(for='name-first') Firat name
+					input(type='text', value='', name='name-first', id='name-first', placeholder='First name')
+			p
+				span
+					label(for='name-last') Last name
+					input(type='text', value='', name='name-last', id='name-last', placeholder='Last name')
+			p
+				span
+					label(for='password') Password
+					input(type='password', value='', name='password', id='password', placeholder='Password')
+			p
+				span
+					input(type='submit', value='Continue')
+
+block misc
+	script(type='text/javascript')
+		$(document).ready(function(){
+			//autofocus first input
+			$("input[type='text']:first", document.forms[0]).focus();
+
+			// *.edu email validation
+			function validateEmail(email) { 
+				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+edu$/;
+				return re.test(email);
+			}
+						
+			//detect school
+			$("#email").blur(function(){
+				var email = $(this).val();
+				if (validateEmail(email)) {
+					var url = email.replace(/.*@/, "");
+					$.ajax({
+						url: "http://textance.herokuapp.com/title/" + url,
+						complete: function(data) {
+							$('.institution').fadeIn().text('Ahh! ' + data.responseText);
+						}
+					});
+				} else {
+					$('.form-container h2').fadeOut('fast',function(){
+						$(this).fadeIn('fast').text('Please enter a valid .edu email address').css('color','#d14');
+					});
+				}
+			});
+		});
