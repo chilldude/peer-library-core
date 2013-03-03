@@ -486,48 +486,24 @@ ol.item-list .abstract, .article-summary .abstract, .review-list .abstract {
 
 
 /* comment list */
-ol.comment-list {
-    margin-bottom: 10px;
-    padding: 0;
+ol.discussion {
+	list-style: none;
+	padding: 10px 0;
+	
 }
 
-ol.comment-list li {
-    list-style-type:none;
-    padding-top: 20px;
+ol.discussion h3 {
+	margin: 0;
 }
 
-ol.comment-list .comment-info {
-    padding-bottom: 5px;
+ol.discussion ol {
+	list-style: none;
+	padding: 0 20px;
+	margin: 0;
 }
 
-ol.comment-list .comment-info i {
-    color: #6f7477;
-    position: relative;
-    top: 5px;
-    padding-right: 5px;
-}
-
-ol.comment-list .comment-info a:hover i {
-    color: #000;
-    text-decoration: none;
-}
-
-ol.comment-list .comment-info .comment-date {
-    color: #6f7477;
-    padding-left: 15px;
-}
-
-ol.comment-list .comment-content {
-    margin-left: 12px;
-    padding-left: 20px;
-}
-
-ol.comment-list .with-response {
-    border-left: 1px solid #dee7e9;
-}
-
-ol.comment-list .comment-content p {
-    line-height: 1.5em;
+ol.discussion ol li {
+	height: auto;
 }
 
 /* user profile */
