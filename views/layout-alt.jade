@@ -1,0 +1,13 @@
+doctype 5
+html
+	head
+		title= title
+		include includes/styles
+		include includes/scripts
+	body
+		.auth-wrapper
+				.auth-header
+					a(href='/')
+						img(src='img/logo.png').logo
+		block content
+		block misc
