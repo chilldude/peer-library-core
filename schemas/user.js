@@ -19,5 +19,5 @@ module.exports.make = function make(Schema, mongoose) {
 		new: Boolean,
 		score: {raw: Number, display: Number}
 	});
-	mongoose.model('User', UserSchema);
+	return mongoose.model('User', UserSchema);
 }
