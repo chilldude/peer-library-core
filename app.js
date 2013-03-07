@@ -10,7 +10,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+  , LocalStrategy = require('passport-local').Strategy
+	, mongoose = require('mongoose');
 
 var app = express();
 
@@ -34,6 +35,17 @@ app.configure(function(){
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
+
+//database declarations
+var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
+
+require('./schemas/user.js').make(Schema, mongoose);
+require('./schemas/institution.js').make(Schema, mongoose);
+require('./schemas/publication.js').make(Schema, mongoose);
+require('./schemas/journal.js').make(Schema, mongoose);
+require('./schemas/review.js').make(Schema, mongoose);
+require('./schemas/comment.js').make(Schema, mongoose);
 
 //authentication
 passport.use(new LocalStrategy({

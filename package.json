@@ -12,6 +12,6 @@
     "redis": "*",
     "passport-local": "*",
     "passport": "*",
-	"pg": "*"
+	"mongoose": "*"
   }
 }
