@@ -37,15 +37,29 @@ app.configure('development', function(){
 });
 
 //database declarations
-var Schema = mongoose.Schema;
-var ObjectId = Schema.ObjectId;
+mongoose.connect('mongodb://localhost/test');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+  var Schema = mongoose.Schema;
+  var ObjectId = Schema.ObjectId;
 
-require('./schemas/user.js').make(Schema, mongoose);
-require('./schemas/institution.js').make(Schema, mongoose);
-require('./schemas/publication.js').make(Schema, mongoose);
-require('./schemas/journal.js').make(Schema, mongoose);
-require('./schemas/review.js').make(Schema, mongoose);
-require('./schemas/comment.js').make(Schema, mongoose);
+  var User = require('./schemas/user.js').make(Schema, mongoose);
+  require('./schemas/institution.js').make(Schema, mongoose);
+  require('./schemas/publication.js').make(Schema, mongoose);
+  require('./schemas/journal.js').make(Schema, mongoose);
+  require('./schemas/review.js').make(Schema, mongoose);
+  require('./schemas/comment.js').make(Schema, mongoose);
+
+  var ro = new User({ first_name: 'Tony' });
+  ro.save(function (err, ro) {
+    if (err) // TODO handle the error
+    console.log(ro.first_name);
+  });
+
+  console.log('Connected to MongoDB');
+});
+
 
 //authentication
 passport.use(new LocalStrategy({
