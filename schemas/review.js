@@ -9,5 +9,5 @@ module.exports.make = function make(Schema, mongoose) {
 		text: String,
 		timestamp: Date
 	});
-	mongoose.model('Review', ReviewSchema);
+	return mongoose.model('Review', ReviewSchema);
 }

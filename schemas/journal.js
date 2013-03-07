@@ -14,5 +14,5 @@ module.exports.make = function make(Schema, mongoose) {
 		start_year: Number,
 		publisher: String
 	});
-	mongoose.model('Journal', JournalSchema);
+	return mongoose.model('Journal', JournalSchema);
 }

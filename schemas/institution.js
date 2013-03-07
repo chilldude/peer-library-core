@@ -8,5 +8,5 @@ module.exports.make = function make(Schema, mongoose) {
 		name: String,
 		domain: String
 	});
-	mongoose.model('Institution', InstitutionSchema);
+	return mongoose.model('Institution', InstitutionSchema);
 }

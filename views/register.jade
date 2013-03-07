@@ -3,7 +3,7 @@ extends layout-alt
 block content
 	.form-container
 		h2 Create your Peer Library account.
-		form(action='/')
+		form(action='/registerHandler', method='POST')
 			p
 				span
 					label(for='email') Email
@@ -12,12 +12,12 @@ block content
 				span.institution
 			p
 				span
-					label(for='name-first') Firat name
-					input(type='text', value='', name='name-first', id='name-first', placeholder='First name')
+					label(for='name_first') First name
+					input(type='text', value='', name='name_first', id='name_first', placeholder='First name')
 			p
 				span
-					label(for='name-last') Last name
-					input(type='text', value='', name='name-last', id='name-last', placeholder='Last name')
+					label(for='name_last') Last name
+					input(type='text', value='', name='name_last', id='name_last', placeholder='Last name')
 			p
 				span
 					label(for='password') Password

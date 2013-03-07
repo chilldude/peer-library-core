@@ -12,5 +12,5 @@ module.exports.make = function make(Schema, mongoose) {
 		children: [ObjectId],
 		votes: [ObjectId]
 	});
-	mongoose.model('Comment', CommentSchema);
+	return mongoose.model('Comment', CommentSchema);
 }

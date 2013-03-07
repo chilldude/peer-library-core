@@ -20,5 +20,5 @@ module.exports.make = function make(Schema, mongoose) {
 		comments: [ObjectId],
 		reviews: [ObjectId]
 	});
-	mongoose.model('Publication', PublicationSchema);
+	return mongoose.model('Publication', PublicationSchema);
 }

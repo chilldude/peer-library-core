@@ -7,11 +7,11 @@ var express = require('express')
   , user = require('./routes/user')
   , article = require('./routes/article')
   , auth = require('./routes/auth')
+  , models = require('./schemas/models')
   , http = require('http')
   , path = require('path')
   , passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy
-	, mongoose = require('mongoose');
+  , LocalStrategy = require('passport-local').Strategy;
 
 var app = express();
 
@@ -36,31 +36,6 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-//database declarations
-mongoose.connect('mongodb://localhost/test');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-  var Schema = mongoose.Schema;
-  var ObjectId = Schema.ObjectId;
-
-  var User = require('./schemas/user.js').make(Schema, mongoose);
-  require('./schemas/institution.js').make(Schema, mongoose);
-  require('./schemas/publication.js').make(Schema, mongoose);
-  require('./schemas/journal.js').make(Schema, mongoose);
-  require('./schemas/review.js').make(Schema, mongoose);
-  require('./schemas/comment.js').make(Schema, mongoose);
-
-  var ro = new User({ first_name: 'Tony' });
-  ro.save(function (err, ro) {
-    if (err) // TODO handle the error
-    console.log(ro.first_name);
-  });
-
-  console.log('Connected to MongoDB');
-});
-
-
 //authentication
 passport.use(new LocalStrategy({
 		usernameField: 'email',
@@ -81,6 +56,7 @@ passport.use(new LocalStrategy({
 app.get('/', routes.index);
 app.get('/login', auth.login);
 app.get('/register', auth.register);
+app.post('/registerHandler', auth.registerHandler);
 app.get('/profile', user.profile);
 app.get('/article', article.details);
 app.get('/search', article.results);
