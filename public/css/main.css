@@ -285,7 +285,7 @@ header .wrap {
 header .logo {
     position: relative;
     top: 20px;
-    height: 55px;
+    height: 30px;
     width: 125px;
     float: left;
 }
@@ -454,7 +454,8 @@ ol.item-list .item-content h4.title {
 
 ol.item-list .abstract, .article-summary .abstract, .review-list .abstract {
     display: none;
-    padding: 20px;
+    padding: 0 20px;
+		position: relative;
 }
 
 /* review list */
@@ -581,7 +582,7 @@ ol.discussion ol li {
 .search .logo {
     position: relative;
     top: 20px;
-    height: 55px;
+    height: 30px;
 }
 
 .search .logo img {
@@ -809,12 +810,13 @@ footer .oa_logo img {
 
 #home .wrap {
     height: 100%;
+		position: relative;
 }
 
 #home .search-bar {
-    position: absolute;
-    top: 50%;
-    width:1120px;
+    position: relative;
+    margin: auto;
+		margin-top: 20%;
     text-align: center;
     z-index: 9999;
 }
