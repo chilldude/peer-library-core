@@ -454,7 +454,8 @@ ol.item-list .item-content h4.title {
 
 ol.item-list .abstract, .article-summary .abstract, .review-list .abstract {
     display: none;
-    padding: 20px;
+    padding: 0 20px;
+		position: relative;
 }
 
 /* review list */
