@@ -9,9 +9,8 @@
     "express": "3.1.0",
     "jade": "*",
     "stylus": "*",
-    "redis": "*",
     "passport-local": "*",
     "passport": "*",
-	"mongoose": "*"
+    "mongoose": "*"
   }
 }
