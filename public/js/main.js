@@ -75,9 +75,8 @@ $(document).ready(function(){
 	    }
 	});
 	
-	//TODO: abstract preview
 	$('.preview-link').click(function(){
-		$('.abstract').slideToggle();
+		$(this).parent().parent().siblings('.abstract').slideToggle();
 	});
 
 	//profile publications/reviews tab
@@ -90,7 +89,6 @@ $(document).ready(function(){
 		$('.reviews-link').removeClass('active');
 		$('.full-text-link').removeClass('active');
 		$('.discussion-link').removeClass('active');
-
 	});
 
 	$('.reviews-link').click(function(){

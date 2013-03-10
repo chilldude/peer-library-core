@@ -3,7 +3,7 @@ var bcrypt = require('bcrypt');
 
 //login
 exports.login = function(req, res){
-  res.render('login', { title: 'Peer Library' });
+  res.render('login', { title: 'Peer Library - Log in' });
 };
 
 //register

@@ -126,4 +126,16 @@ block misc
 			});
 			$( "#pub-date" ).val( $( "#date-range" ).slider( "values", 0 ) +
 				" - " + $( "#date-range" ).slider( "values", 1 ) );
+
+			// adjust positioning of sidebar
+			if($(window).width() < 1140){
+				$('.search-tools').css({'position':'absolute'});
+			};
+			$(window).resize(function(){
+				if($(window).width() < 1140){
+					$('.search-tools').css({'position':'absolute'});
+				} else {
+					$('.search-tools').css({'position':'fixed'});
+				};
+			});
 		});
