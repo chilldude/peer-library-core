@@ -46,19 +46,19 @@ app.get('/article', article.details);
 app.get('/search', article.results);
 app.get('/users', user.list);
 
-app.post('/login',
-  passport.authenticate('local', { successRedirect: '/',
-                                   failureRedirect: '/login',
-                                   failureFlash: false })
-);
+app.post('/login', 
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
 
 // Authentication
 passport.use(new LocalStrategy(
-	function(email, password, done) {
-		models.User.findOne({ email: email }, function (err, user) {
-			if (err) { console.log("fail"); return done(err); }
-			if (!user || !user.validPassword(password)) {
-				console.log("fail");
+	function(username, password, done) {
+    console.log('dope');
+		models.User.findOne({ email: username }, function (err, user) {
+			if (!user || password != user.password) {
+				console.log('fail');
 				return done(null, false, { message: 'Incorrect email/password combination.' });
 			}
 			console.log('success');
@@ -66,6 +66,14 @@ passport.use(new LocalStrategy(
 		});
 	}
 ));
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
