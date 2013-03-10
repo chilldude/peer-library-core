@@ -42,7 +42,7 @@ app.get('/', routes.index);
 app.get('/login', auth.login);
 app.get('/register', auth.register);
 app.post('/registerHandler', auth.registerHandler);
-app.get('/profile', user.profile);
+app.get('/profile', ensureAuthenticated, user.profile);
 app.get('/article', article.details);
 app.get('/search', article.results);
 app.get('/users', user.list);
@@ -77,6 +77,11 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/login')
+}
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
