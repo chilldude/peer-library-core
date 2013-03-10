@@ -11,6 +11,7 @@
     "stylus": "*",
     "passport-local": "*",
     "passport": "*",
+    "bcrypt": "*",
     "mongoose": "*"
   }
 }

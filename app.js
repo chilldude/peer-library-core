@@ -11,7 +11,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+  , LocalStrategy = require('passport-local').Strategy
+  , bcrypt = require('bcrypt');
 
 var app = express();
 
@@ -54,19 +55,11 @@ app.post('/login',
 
 // Authentication
 passport.use(new LocalStrategy(
-<<<<<<< HEAD
-	function(email, password, done) {
-		models.User.findOne({ email: email }, function (err, user) {
-			if (err) { return done(err); }
-			if (!user || !user.validPassword(password)) {
-				console.log("fail");
-=======
 	function(username, password, done) {
     console.log('dope');
 		models.User.findOne({ email: username }, function (err, user) {
-			if (!user || password != user.password) {
+			if (!user || !bcrypt.compareSync(password, user.password)) {
 				console.log('fail');
->>>>>>> 73deed05c87ea3968f1cffce4b00b71c888ed4ba
 				return done(null, false, { message: 'Incorrect email/password combination.' });
 			}
 			console.log('success');
