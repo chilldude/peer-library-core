@@ -36,22 +36,6 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-//authentication
-passport.use(new LocalStrategy({
-		usernameField: 'email',
-		passwordField: 'password'
-	},
-	function(username, password, done) {
-		user.findOne({ username: username }, function(err, user) {
-			if (err) { return done(err); }
-			if (!user || !user.validPassword(password)) {
-				return done(null, false, { message: 'Incorrect email/password combination' });
-			}
-			return done(null, user);
-		});
-	}
-));
-
 //configure routes
 app.get('/', routes.index);
 app.get('/login', auth.login);
@@ -65,8 +49,23 @@ app.get('/users', user.list);
 app.post('/login',
   passport.authenticate('local', { successRedirect: '/',
                                    failureRedirect: '/login',
-                                   failureFlash: true })
+                                   failureFlash: false })
 );
+
+// Authentication
+passport.use(new LocalStrategy(
+	function(email, password, done) {
+		models.User.findOne({ email: email }, function (err, user) {
+			if (err) { console.log("fail"); return done(err); }
+			if (!user || !user.validPassword(password)) {
+				console.log("fail");
+				return done(null, false, { message: 'Incorrect email/password combination.' });
+			}
+			console.log('success');
+			return done(null, user);
+		});
+	}
+));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

@@ -12,10 +12,12 @@ exports.register = function(req, res) {
 
 exports.registerHandler = function(req, res){
   var user = new models.User({
-    emails: [{email: req.body.email, verification_key: 1337, verified: false}],
-    first_name: req.body.name_first,
-    last_name: req.body.name_last,
-    password: req.body.password
+    email: req.body.email,
+    name_first: req.body.name_first,
+    name_last: req.body.name_last,
+    password: req.body.password,
+		email_verfication_key: 6969,
+		email_verified: false
   });
 
   user.save(function (err) {

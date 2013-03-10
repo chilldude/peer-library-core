@@ -6,16 +6,18 @@ module.exports.make = function make(Schema, mongoose) {
 	//Define User schema
 	var UserSchema = new Schema({
 		user_id: Number,
+		email: String,
 		password: String,
 		salt: String,
-		emails: [{email: String, verification_key: Number, verified: Boolean}],
 		publications: [ObjectId],
-		first_name: String,
-		middle_name: String,
-		last_name: String,
+		name_first: String,
+		name_middle: String,
+		name_last: String,
 		affiliations: [{title: String, institution: ObjectId}],
 		last_seen: Date,
 		created_at: Date,
+		email_verified: Boolean,
+		email_verification_key: String,
 		new: Boolean,
 		score: {raw: Number, display: Number}
 	});
