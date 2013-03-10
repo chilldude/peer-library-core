@@ -56,7 +56,7 @@ app.post('/login',
 passport.use(new LocalStrategy(
 	function(email, password, done) {
 		models.User.findOne({ email: email }, function (err, user) {
-			if (err) { console.log("fail"); return done(err); }
+			if (err) { return done(err); }
 			if (!user || !user.validPassword(password)) {
 				console.log("fail");
 				return done(null, false, { message: 'Incorrect email/password combination.' });

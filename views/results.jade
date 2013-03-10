@@ -9,118 +9,43 @@ block content
 				a(href='#') Controversial <hr>
 			.clearfix
 			ol.item-list
-				li
-					.article-summary
-						.article-summary-data
-							h4.title
-								a(href='#').viewer-link Analytical aspects of Brownian motor effect in randomly flashing ratchets
-							span.authors
-								a(href='#') Dmitry Vorotnikov
-							| <br>
-							span.date June 2012
-							|	in 
-							span.field
-								a(href='#') Astrophysics
-							|	&raquo; 
-							span.topics
-								a(href='#') High Energy Astrophysical Phenomena
-							| <br>
-							span.actions
-								a(href='#').preview-link Preview abstract
-								|  &middot; 
-								a(href='#') Full text
-								|  &middot; 
-								a(href='#') Details 
-								i.icon-external-link
-						span.article-summary-stats
-							span
-								i.icon-bookmark
-								|  133 
-							span
-								i.icon-edit
-								|  42 
-						.clearfix
-						.abstract
-							p The muscle contraction, operation of ATP synthase, maintaining the shape of a cell are believed to be secured by motor proteins, which can be modelled using the Brownian ratchet mechanism. We consider the randomly ﬂashing ratchet model of a Brownian motor, where the particles can be in two states, only one of which is sensitive the applied spatially periodic potential (the mathematical setting is a pair of weakly coupled reactiondiffusion and Fokker-Planck equations).
-				li
-					.article-summary
-						.article-summary-data
-							h4.title
-								a(href='#').viewer-link Analytical aspects of Brownian motor effect in randomly flashing ratchets
-							span.authors
-								a(href='#') Dmitry Vorotnikov
-							| <br>
-							span.date June 2012
-							|	in 
-							span.field
-								a(href='#') Astrophysics
-							|	&raquo; 
-							span.topics
-								a(href='#') High Energy Astrophysical Phenomena
-							| <br>
-							span.actions
-								a(href='#').preview-link Preview abstract
-								|  &middot; 
-								a(href='#') Full text
-								|  &middot; 
-								a(href='#') Details 
-								i.icon-external-link
-						span.article-summary-stats
-							span
-								i.icon-bookmark
-								|  133 
-							span
-								i.icon-edit
-								|  42 
-						.clearfix
-						.abstract
-							p The muscle contraction, operation of ATP synthase, maintaining the shape of a cell are believed to be secured by motor proteins, which can be modelled using the Brownian ratchet mechanism. We consider the randomly ﬂashing ratchet model of a Brownian motor, where the particles can be in two states, only one of which is sensitive the applied spatially periodic potential (the mathematical setting is a pair of weakly coupled reactiondiffusion and Fokker-Planck equations).
-				li
-					.article-summary
-						.article-summary-data
-							h4.title
-								a(href='#').viewer-link Analytical aspects of Brownian motor effect in randomly flashing ratchets
-							span.authors
-								a(href='#') Dmitry Vorotnikov
-							| <br>
-							span.date June 2012
-							|	in 
-							span.field
-								a(href='#') Astrophysics
-							|	&raquo; 
-							span.topics
-								a(href='#') High Energy Astrophysical Phenomena
-							| <br>
-							span.actions
-								a(href='#').preview-link Preview abstract
-								|  &middot; 
-								a(href='#') Full text
-								|  &middot; 
-								a(href='#') Details 
-								i.icon-external-link
-						span.article-summary-stats
-							span
-								i.icon-bookmark
-								|  133 
-							span
-								i.icon-edit
-								|  42 
-						.clearfix
-						.abstract
-							p The muscle contraction, operation of ATP synthase, maintaining the shape of a cell are believed to be secured by motor proteins, which can be modelled using the Brownian ratchet mechanism. We consider the randomly ﬂashing ratchet model of a Brownian motor, where the particles can be in two states, only one of which is sensitive the applied spatially periodic potential (the mathematical setting is a pair of weakly coupled reactiondiffusion and Fokker-Planck equations).
-			ol.review-list
-				li
-					.review-item
-						.review-author
-							h3.name Slavoj Zizek
-							span.title Professor of Philosophy, Princeton University
-						.review-verdict
-							span
-								| Strongly support
-								i.icon-sign-blank.plus-plus
-						.review-text
-							p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-							p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+				- for (var i = 0; i < 20; ++i) {
+					li
+						.article-summary
+							.article-summary-data
+								span.score-badge 69
+								h4.title
+									a(href='#').viewer-link The muscle contraction, operation of ATP synthase Analytical aspects of Brownian motor effect in randomly flashing ratchets
+								.clearfix
+								span.authors.line
+									a(href='#') Dmitry Vorotnikov
+								| <br>
+								span.date.line June 2012
+								|	in 
+								span.field.line
+									a(href='#') Astrophysics
+								|	&raquo; 
+								span.topics.line
+									a(href='#') High Energy Astrophysical Phenomena
+								| <br>
+								span.actions.line
+									a(href='#').preview-link Preview abstract
+									|  &middot; 
+									a(href='#') Full text
+									|  &middot; 
+									a(href='#') Details 
+									i.icon-external-link
+							span.article-summary-stats
+								span
+									i.icon-bookmark
+									|  133 
+								span
+									i.icon-edit
+									|  42 
+							.clearfix
+							.abstract
+								p The muscle contraction, operation of ATP synthase, maintaining the shape of a cell are believed to be secured by motor proteins, which can be modelled using the Brownian ratchet mechanism. We consider the randomly ﬂashing ratchet model of a Brownian motor, where the particles can be in two states, only one of which is sensitive the applied spatially periodic potential (the mathematical setting is a pair of weakly coupled reactiondiffusion and Fokker-Planck equations).
+				- }
 		.grid_3
 			.search-tools
 				h3 Refine Search

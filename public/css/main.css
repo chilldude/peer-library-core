@@ -126,6 +126,26 @@ input:focus {
 	background-position: 0 0;
 }
 
+.score-badge {
+	color: #222;
+	margin-right: 10px;
+	padding: 3px;
+	border: 1px solid #476785;
+	background: #fff;
+	vertical-align: middle;
+	text-align: center;
+	cursor: default;
+	float: left;
+	height: 16px;
+		
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 /* =============================
         ghp
     =============================*/
@@ -366,10 +386,9 @@ header .menu ul.nav li a:hover {
     padding: 20px 0;
 }
 
-.article-summary span {
+span.line {
 	line-height: 25px;
 }
-
 /* article list */
 ol.item-list {
     padding: 0;
@@ -411,6 +430,7 @@ ol.item-list span.stats, span.article-summary-stats {
     font-weight: 300;
     text-align: right;
     width: 150px;
+		margin-top: 4px;
 }
 
 ol.item-list span.stats span, span.article-summary-stats span {
@@ -419,6 +439,17 @@ ol.item-list span.stats span, span.article-summary-stats span {
 
 ol.item-list .item-content h4.title, .article-summary-data h4.title {
     margin-bottom: 10px;
+		line-height: 25px;
+		float: left;
+		display: inline-block;
+}
+
+ol.item-list .item-content h4.title {
+	width: 640px;
+}
+
+.article-summary-data h4.title {
+	width: 575px;
 }
 
 ol.item-list .abstract, .article-summary .abstract, .review-list .abstract {
@@ -449,6 +480,7 @@ ol.item-list .abstract, .article-summary .abstract, .review-list .abstract {
 }
 
 .review-list li .verdict {
+	margin-top: 4px;
     float: right;
 }
 
@@ -510,16 +542,14 @@ ol.discussion ol li {
 }
 
 /* user profile */
-.user-info .name {
-    display: inline;
-    line-height: 3em;
+.user-info {
+	padding-top: 20px;
 }
 
-.user-info .score {
-    color: #6f7477;
-    padding: 0 3px;
-    margin-right: 10px;
-    border: 1px solid #dee7e9;
+.user-info .name {
+    display: inline-block;
+		float: left;
+		margin-top: 2px;
 }
 
 .user-info .title {
@@ -643,10 +673,14 @@ ul.field-list li ul.subject-list {
 
 /* sidebar > search tools */
 .search-tools {
-	margin-top: 20px;
+	position: fixed;
+	margin-top: 75px;
 	padding: 10px;
 	border-left: 1px solid #dee7e9;
 	padding-bottom: 30px;
+	overflow: auto;
+	top: 0;
+	bottom: 0;
 }
 
 .search-tools h3 {
