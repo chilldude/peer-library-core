@@ -5,7 +5,7 @@ var ObjectId = Schema.ObjectId;
 module.exports.make = function make(Schema, mongoose) {
 	//Define Review schema
 	var ReviewSchema = new Schema({
-		author: ObjectId,
+		author: { type: ObjectId, ref: 'User' },
 		text: String,
 		timestamp: Date
 	});
