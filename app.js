@@ -12,7 +12,8 @@ var express = require('express')
   , path = require('path')
   , passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy
-  , bcrypt = require('bcrypt');
+  , bcrypt = require('bcrypt')
+  , async = require('async');
 
 var app = express();
 
@@ -50,7 +51,7 @@ app.get('/users', user.list);
 app.post('/login', 
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/profile');
   });
 
 // Authentication

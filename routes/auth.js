@@ -24,7 +24,7 @@ exports.registerHandler = function(req, res){
   });
 
   user.save(function (err) {
-    if (err) res.render('index', { title: 'Peer Library' });
-    res.render('profile', {'title': 'Peer Library'});
+    if (err) res.redirect('/register');
+    res.redirect('/');
   });
 };
