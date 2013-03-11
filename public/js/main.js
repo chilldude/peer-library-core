@@ -39,7 +39,9 @@ $(document).ready(function(){
 	});
 
 	$('#home .search-input').click(function() {
-		searchOn();
+		if(!searchActive) {
+			searchOn();
+		}
 	});
 
 	// viewer
@@ -75,8 +77,13 @@ $(document).ready(function(){
 	    }
 	});
 	
+	//combine slide and fade toggle
+	$.fn.slideFadeToggle  = function(speed, easing, callback) {
+		return this.animate({opacity: 'toggle', height: 'toggle'}, speed, easing, callback);
+	};
+	
 	$('.preview-link').click(function(){
-		$(this).parent().parent().siblings('.abstract').slideToggle();
+		$(this).parent().parent().siblings('.abstract').slideFadeToggle();
 	});
 
 	//profile publications/reviews tab
