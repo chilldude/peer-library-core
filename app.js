@@ -50,7 +50,7 @@ app.get('/users', user.list);
 app.post('/login', 
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/profile');
   });
 
 function ensureAuthenticated(req, res, next) {
