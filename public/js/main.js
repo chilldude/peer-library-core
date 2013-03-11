@@ -90,7 +90,6 @@ $(document).ready(function(){
 	$('.publications-link').click(function(){
 		$('.review-list').hide();
 		$('.discussion').hide();
-		$('.full-text').hide();
 		$('.item-list').fadeIn(250);
 		$('.publications-link').addClass('active');
 		$('.reviews-link').removeClass('active');
@@ -101,29 +100,16 @@ $(document).ready(function(){
 	$('.reviews-link').click(function(){
 		$('.item-list').hide();
 		$('.review-list').fadeIn(250);
-		$('.full-text').hide();
 		$('.discussion').hide();
 		$('.publications-link').removeClass('active');
 		$('.reviews-link').addClass('active');
 		$('.full-text-link').removeClass('active');
 		$('.discussion-link').removeClass('active');
 	});
-
-	$('.full-text-link').click(function(){
-		$('.item-list').hide();
-		$('.discussion').hide();
-		$('.review-list').hide();
-		$('.full-text').fadeIn(250);
-		$('.publications-link').removeClass('active');
-		$('.reviews-link').removeClass('active');
-		$('.full-text-link').addClass('active');
-		$('.discussion-link').removeClass('active');
-	});
 	
 	$('.discussion-link').click(function(){
 		$('.item-list').hide();
 		$('.review-list').hide();
-		$('.full-text').hide();
 		$('.discussion').fadeIn(250);
 		$('.publications-link').removeClass('active');
 		$('.reviews-link').removeClass('active');

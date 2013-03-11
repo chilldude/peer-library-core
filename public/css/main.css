@@ -525,7 +525,6 @@ ol.item-list .abstract, .article-summary .abstract, .review-list .abstract {
 ol.discussion {
 	list-style: none;
 	padding: 10px 0;
-	display: none;
 }
 
 ol.discussion h3 {
