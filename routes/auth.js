@@ -1,5 +1,6 @@
 var models = require('../schemas/models');
 var bcrypt = require('bcrypt');
+var auth = require('../modules/auth')
 
 //login
 exports.login = function(req, res){

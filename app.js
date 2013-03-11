@@ -12,8 +12,7 @@ var express = require('express')
   , path = require('path')
   , passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy
-  , bcrypt = require('bcrypt')
-  , async = require('async');
+  , bcrypt = require('bcrypt');
 
 var app = express();
 
@@ -43,7 +42,7 @@ app.get('/', routes.index);
 app.get('/login', auth.login);
 app.get('/register', auth.register);
 app.post('/registerHandler', auth.registerHandler);
-app.get('/profile', ensureAuthenticated, user.profile);
+app.get('/profile', user.profile);
 app.get('/article', article.details);
 app.get('/search', article.results);
 app.get('/users', user.list);
@@ -51,33 +50,8 @@ app.get('/users', user.list);
 app.post('/login', 
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/profile');
+    res.redirect('/');
   });
-
-// Authentication
-passport.use(new LocalStrategy(
-	function(username, password, done) {
-    console.log('dope');
-		models.User.findOne({ email: username }, function (err, user) {
-			if (!user || !bcrypt.compareSync(password, user.password)) {
-				console.log('fail');
-				return done(null, false, { message: 'Incorrect email/password combination.' });
-			}
-			console.log('success');
-			return done(null, user);
-		});
-	}
-));
-
-passport.serializeUser(function(user, done) {
-  done(null, user._id);
-});
-
-passport.deserializeUser(function(id, done) {
-  models.User.findById(id, function(err, user) {
-    done(err, user);
-  });
-});
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
