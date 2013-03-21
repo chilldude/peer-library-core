@@ -8,3 +8,5 @@ peer library application
 ```
 npm update
 ```
+
+This has been moved to: https://github.com/peerlibrary/peerlibrary
